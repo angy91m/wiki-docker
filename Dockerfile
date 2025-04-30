@@ -6,6 +6,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"; \
     composer update --no-dev
 RUN apt -y update && apt -y install zip unzip nano ploticus fonts-freefont-ttf; \
     cd extensions; \
+    git clone -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/MobileFrontend; \
     git clone -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/PluggableAuth; \
     git clone https://github.com/angy91m/WSOAuth.git; \
     git clone -b REL1_43 https://gerrit.wikimedia.org/r/mediawiki/extensions/timeline; \
